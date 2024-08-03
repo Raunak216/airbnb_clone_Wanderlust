@@ -1,0 +1,15 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<body>
+    <ul>
+    <li><%= showlisting.title%></li>
+    <li><%=showlisting.description%></li>
+    <li>&#8377;<%=showlisting.price.toLocaleString("en-IN")%></li>
+    <li><%= showlisting.location%></li>
+    <li><%= showlisting.country%></li>
+    </ul>
+    <a href="/listings/<%=showlisting._id%>/edit">edit</a>
+    <br><br>
+    <form  method="post" action="/listings/<%=showlisting._id%>?_method=DELETE">
+        <button>Delete</button>
+    </form>
+</body>
